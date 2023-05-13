@@ -83,6 +83,8 @@ export class TestComponent implements OnInit {
     this.service
       .getUsers(filterParams)
       .subscribe((users) => this.store.dispatch(loadUsers({ items: users })));
+
+    this.showFilter = false;
   }
 
   resetFilter(): void {
@@ -91,6 +93,7 @@ export class TestComponent implements OnInit {
       .subscribe((users) => this.store.dispatch(loadUsers({ items: users })));
 
     this.filterForm.reset();
+    this.showFilter = false;
   }
 
   /**
